@@ -1,13 +1,13 @@
 // Creates and returns a new dancer object that can step
 var Dancer = function (top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps
-  this.step();
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
+  this.step();
 }
 
 Dancer.prototype.step = function () {
-  var bound = makeBlinkyDancer.prototype.oldStep.bind(this)
+  var bound = this.step.bind(this)
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   setTimeout(bound, this.timeBetweenSteps);

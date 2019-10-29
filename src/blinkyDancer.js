@@ -7,27 +7,13 @@ makeBlinkyDancer.prototype = Object.create(Dancer.prototype);
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 
-makeBlinkyDancer.prototype.oldStep = function () {
+makeBlinkyDancer.prototype.step = function () {
   // this.step();
+  Dancer.prototype.step.call(this)
   this.$node.toggle();
-  this.step();
 };
 // incorporate the step fucntion from normal dancer to blinky dancer
 
-
-
-
-
-// should call step at least once per secondâ€£
-// AssertionError: expected 0 to equal 1sinon.spy(blinkyDancer, 'step');
-// expect(blinkyDancer.step.callCount).to.be.equal(0);
-// clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
-// clock.tick(timeBetweenSteps);
-
-// expect(blinkyDancer.step.callCount).to.be.equal(1);
-
-// clock.tick(timeBetweenSteps);
-// expect(blinkyDancer.step.callCount).to.be.equal(2);
 
 
 /*
